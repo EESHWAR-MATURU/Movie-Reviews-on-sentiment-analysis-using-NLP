@@ -1,23 +1,52 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Review Sentiment Analyzer</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
 
-<div class="container mt-5">
-    <h2>Welcome to Movie Review Sentiment Analyzer</h2>
-    <form method="POST" action="/predict">
-        <div class="form-group">
-            <label for="Reviews">Enter your movie review:</label>
-            <textarea class="form-control" id="Reviews" name="Reviews" rows="5" required></textarea>
+    <div class="container mt-5" id="formSection">
+        <h2>Welcome to Movie Review Sentiment Analyzer</h2>
+        <form id="reviewForm">
+            <div class="form-group">
+                <label for="Reviews">Enter your movie review:</label>
+                <textarea class="form-control" id="Reviews" name="Reviews" rows="5" required></textarea>
+            </div>
+            <button type="button" id="predictButton" class="btn btn-primary">Predict Sentiment</button>
+        </form>
+    </div>
+
+    <div class="container mt-5 d-none" id="resultSection">
+        <h2>Result - Movie Review Sentiment Analyzer</h2>
+        <div class="alert alert-info" role="alert" id="resultDiv">
         </div>
-        <button type="submit" class="btn btn-primary">Predict Sentiment</button>
-    </form>
-</div>
+        <button type="button" id="backButton" class="btn btn-primary">Back to Home</button>
+    </div>
+
+    <script>
+        document.getElementById('predictButton').addEventListener('click', function () {
+            var review = document.getElementById('Reviews').value;
+            var prediction = Math.random() < 0.5 ? 'Positive' : 'Negative';
+
+            document.getElementById('resultDiv').innerHTML = '<strong>Prediction:</strong> ' + prediction;
+            document.getElementById('formSection').classList.add('d-none');
+            document.getElementById('resultSection').classList.remove('d-none');
+        });
+
+        document.getElementById('backButton').addEventListener('click', function () {
+            document.getElementById('resultSection').classList.add('d-none');
+            document.getElementById('formSection').classList.remove('d-none');
+            document.getElementById('Reviews').value = '';
+        });
+    </script>
 
 </body>
+
 </html>
