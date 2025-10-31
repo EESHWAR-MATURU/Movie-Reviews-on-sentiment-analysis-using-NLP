@@ -1,0 +1,88 @@
+/* Import a professional font (Roboto) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem;
+    padding: 2.5rem;
+    background-color: #ffffff; /* Clean white container */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #007bff; /* Blue accent */
+}
+
+h2 {
+    color: #0056b3; /* Darker blue heading */
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Form Styling */
+.form-group label {
+    font-weight: 500;
+    color: #555;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004a99;
+}
+
+/* Result Page Styling */
+.alert-info {
+    background-color: #e6f7ff;
+    border-color: #b3e0ff;
+    color: #0056b3;
+    padding: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.alert-info strong {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+/* Make "Back to Home" button match the predict button */
+a.btn-primary {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+}
